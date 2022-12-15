@@ -10,7 +10,20 @@
         "firebase-debug.*.log"
       ],
       "predeploy": [
-        "npm --prefix \"%RESOURCE_DIR%\" run lint"
+        "npm --prefix \"%RESOURCE_DIR%\" run build"
+      ]
+    },
+    {
+      "source": "scrambel-2",
+      "codebase": "scrambel-2",
+      "ignore": [
+        "node_modules",
+        ".git",
+        "firebase-debug.log",
+        "firebase-debug.*.log"
+      ],
+      "predeploy": [
+        "npm --prefix \"$RESOURCE_DIR\" run lint"
       ]
     }
   ],
@@ -27,5 +40,17 @@
         "destination": "/index.html"
       }
     ]
+  },
+  "emulators": {
+    "functions": {
+      "port": 3000
+    },
+    "hosting": {
+      "port": 5000
+    },
+    "ui": {
+      "enabled": false
+    },
+    "singleProjectMode": true
   }
 }
